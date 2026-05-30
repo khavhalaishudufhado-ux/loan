@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial,sans-serif;
+        }
+
+        body {
+            color: white;
+            overflow-x: hidden;
+            background: radial-gradient(circle at top left, rgba(16,185,129,.25), transparent 350px), radial-gradient(circle at top right, rgba(37,99,235,.25), transparent 350px), radial-gradient(circle at bottom, rgba(168,85,247,.20), transparent 300px), linear-gradient(135deg,#0f172a,#1e293b);
+        }
+
+        /* HEADER */
+        header {
+            background: rgba(30,58,138,.7);
+            backdrop-filter: blur(15px);
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 110px 20px;
+        }
+
+            .hero h1 {
+                font-size: 55px;
+                margin-bottom: 15px;
+                background: linear-gradient( 90deg, #22c55e, #60a5fa, #a855f7, #f97316 );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .hero p {
+                max-width: 700px;
+                margin: auto;
+                font-size: 20px;
+                line-height: 1.8;
+                color: #e2e8f0;
+            }
+
+        /* BUTTON */
+        .btn {
+            background: linear-gradient(45deg,#10b981,#059669);
+            padding: 14px 24px;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 25px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: 0.3s;
+            box-shadow: 0 10px 25px rgba(16,185,129,.35);
+        }
+
+            .btn:hover {
+                transform: translateY(-3px);
+            }
+
+        /* SECTION */
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+            .section h2 {
+                margin-bottom: 25px;
+                font-size: 32px;
+            }
+
+        .features {
+            max-width: 650px;
+            margin: auto;
+            background: rgba(255,255,255,.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 20px;
+            padding: 35px;
+            text-align: left;
+            font-size: 18px;
+            line-height: 2.2;
+            color: #e2e8f0;
+        }
+
+        /* FOOTER */
+        footer {
+            background: rgba(11,18,32,.8);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            color: #94a3b8;
+        }
+
+        /* POPUP */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.85);
+        }
+
+        .popup-content {
+            background: #1e293b;
+            width: 90%;
+            max-width: 420px;
+            margin: 80px auto;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,.1);
+        }
+
+            .popup-content h2 {
+                margin-bottom: 15px;
+            }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+        }
+
+        .close-btn {
+            background: red;
+            padding: 10px 16px;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* 💥 FLOATING EMOJIS (UPDATED MIX) */
+        .emoji {
+            position: fixed;
+            bottom: -60px;
+            font-size: 26px;
+            opacity: 0.22;
+            animation: rise 10s linear infinite;
+            z-index: -1;
+        }
+
+            /* spread across screen */
+            .emoji:nth-child(1) {
+                left: 5%;
+                animation-delay: 0s;
+            }
+
+            .emoji:nth-child(2) {
+                left: 10%;
+                animation-delay: 1s;
+            }
+
+            .emoji:nth-child(3) {
+                left: 15%;
+                animation-delay: 2s;
+            }
+
+            .emoji:nth-child(4) {
+                left: 20%;
+                animation-delay: 3s;
+            }
+
+            .emoji:nth-child(5) {
+                left: 25%;
+                animation-delay: 4s;
+            }
+
+            .emoji:nth-child(6) {
+                left: 30%;
+                animation-delay: 5s;
+            }
+
+            .emoji:nth-child(7) {
+                left: 35%;
+                animation-delay: 1.5s;
+            }
+
+            .emoji:nth-child(8) {
+                left: 40%;
+                animation-delay: 2.5s;
+            }
+
+            .emoji:nth-child(9) {
+                left: 45%;
+                animation-delay: 3.5s;
+            }
+
+            .emoji:nth-child(10) {
+                left: 50%;
+                animation-delay: 4.5s;
+            }
+
+            .emoji:nth-child(11) {
+                left: 55%;
+                animation-delay: 2s;
+            }
+
+            .emoji:nth-child(12) {
+                left: 60%;
+                animation-delay: 3s;
+            }
+
+            .emoji:nth-child(13) {
+                left: 65%;
+                animation-delay: 4s;
+            }
+
+            .emoji:nth-child(14) {
+                left: 70%;
+                animation-delay: 1s;
+            }
+
+            .emoji:nth-child(15) {
+                left: 75%;
+                animation-delay: 2.2s;
+            }
+
+            .emoji:nth-child(16) {
+                left: 80%;
+                animation-delay: 3.8s;
+            }
+
+            .emoji:nth-child(17) {
+                left: 85%;
+                animation-delay: 1.8s;
+            }
+
+            .emoji:nth-child(18) {
+                left: 90%;
+                animation-delay: 2.8s;
+            }
+
+            .emoji:nth-child(19) {
+                left: 95%;
+                animation-delay: 3.6s;
+            }
+
+            .emoji:nth-child(20) {
+                left: 98%;
+                animation-delay: 4.2s;
+            }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0) scale(0.8);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.25;
+            }
+
+            50% {
+                transform: translateY(-60vh) scale(1);
+            }
+
+            100% {
+                transform: translateY(-120vh) scale(0.9);
+                opacity: 0;
+            }
+        }
+
+        /* MOBILE */
+        @media(max-width:768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🌟 FLOATING EMOJIS -->
+    <div class="emoji">💰</div>
+    <div class="emoji">✔️</div>
+    <div class="emoji">⭐</div>
+    <div class="emoji">🙏</div>
+    <div class="emoji">💳</div>
+    <div class="emoji">📈</div>
+    <div class="emoji">💸</div>
+    <div class="emoji">🏦</div>
+    <div class="emoji">💵</div>
+    <div class="emoji">📊</div>
+    <div class="emoji">🔒</div>
+    <div class="emoji">💎</div>
+    <div class="emoji">🤝</div>
+    <div class="emoji">📱</div>
+    <div class="emoji">⚡</div>
+    <div class="emoji">🎯</div>
+    <div class="emoji">🧾</div>
+    <div class="emoji">📥</div>
+    <div class="emoji">🪙</div>
+    <div class="emoji">📢</div>
+
+    <header>
+         Quick Loan Services
+    </header>
+
+    <div class="hero">
+
+        <h1>Fast & Easy Loan Approval</h1>
+
+        <p>
+            Apply for a personal loan in minutes.
+            Secure, trusted and fast financial support when you need it most.
+        </p>
+
+        <button class="btn" onclick="openPopup()">
+            📩 Apply For Loan
+        </button>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Why Choose Us?</h2>
+
+        <div class="features">
+            ✔ Fast loan processing<br>
+            ✔ Secure application system<br>
+            ✔ Trusted financial service<br>
+            ✔ Affordable repayment options<br>
+            ✔ interest rate is only 40%<br>
+            ✔ Mobile friendly platform<br>
+            ✔ 24/7 support available<br>
+        </div>
+
+    </div>
+
+    <footer>
+        Your trusted financial partner
+    </footer>
+
+    <!-- POPUP -->
+    <div class="popup" id="popup">
+
+        <div class="popup-content">
+
+            <h2>Loan Application</h2>
+
+            <input id="name" placeholder="Full Name">
+            <input id="phone" placeholder="Phone Number">
+            <input id="amount" placeholder="Loan Amount">
+
+            <button class="btn" onclick="sendWhatsApp()">
+                Send Application
+            </button>
+
+            <br><br>
+
+            <button class="close-btn" onclick="closePopup()">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function openPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        function sendWhatsApp() {
+
+            let name = document.getElementById("name").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let amount = document.getElementById("amount").value.trim();
+
+            if (!name || !phone || !amount) {
+                alert("Please fill all fields");
+                return;
+            }
+
+            let message =
+                `💰 NEW LOAN APPLICATION
+
+👤 Full Name: ${name}
+📞 Phone Number: ${phone}
+💵 Loan Amount: ${amount}`;
+
+            let whatsappNumber = "0817509213";
+
+            let url =
+                `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+            window.open(url, "_blank");
+        }
+
+    </script>
+
+</body>
+</html>
